@@ -1,0 +1,96 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "keysecret-auth@git+https://github.com/PearsonTech/keysecret-auth.git",
+        "scope": null,
+        "escapedName": "keysecret-auth",
+        "name": "keysecret-auth",
+        "rawSpec": "git+https://github.com/PearsonTech/keysecret-auth.git",
+        "spec": "git+https://github.com/PearsonTech/keysecret-auth.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:PearsonTech/keysecret-auth.git",
+          "sshUrl": "git+ssh://git@github.com/PearsonTech/keysecret-auth.git",
+          "httpsUrl": "git+https://github.com/PearsonTech/keysecret-auth.git",
+          "gitUrl": "git://github.com/PearsonTech/keysecret-auth.git",
+          "shortcut": "github:PearsonTech/keysecret-auth",
+          "directUrl": "https://raw.githubusercontent.com/PearsonTech/keysecret-auth/master/package.json"
+        }
+      },
+      "D:\\codebase\\Gab\\PUL-2503_HawkLatest\\node-gabapi"
+    ]
+  ],
+  "_from": "git+https://github.com/PearsonTech/keysecret-auth.git",
+  "_id": "keysecret-auth@1.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/keysecret-auth",
+  "_phantomChildren": {
+    "boom": "3.2.2"
+  },
+  "_requested": {
+    "raw": "keysecret-auth@git+https://github.com/PearsonTech/keysecret-auth.git",
+    "scope": null,
+    "escapedName": "keysecret-auth",
+    "name": "keysecret-auth",
+    "rawSpec": "git+https://github.com/PearsonTech/keysecret-auth.git",
+    "spec": "git+https://github.com/PearsonTech/keysecret-auth.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:PearsonTech/keysecret-auth.git",
+      "sshUrl": "git+ssh://git@github.com/PearsonTech/keysecret-auth.git",
+      "httpsUrl": "git+https://github.com/PearsonTech/keysecret-auth.git",
+      "gitUrl": "git://github.com/PearsonTech/keysecret-auth.git",
+      "shortcut": "github:PearsonTech/keysecret-auth",
+      "directUrl": "https://raw.githubusercontent.com/PearsonTech/keysecret-auth/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/PearsonTech/keysecret-auth.git#465c03371d404153c0cb01cf79b3e259c2e60863",
+  "_shasum": "f284141338d769253064919563f6fb6a458eaa5f",
+  "_shrinkwrap": null,
+  "_spec": "keysecret-auth@git+https://github.com/PearsonTech/keysecret-auth.git",
+  "_where": "D:\\codebase\\Gab\\PUL-2503_HawkLatest\\node-gabapi",
+  "author": {
+    "name": "Jozz Hart"
+  },
+  "bugs": {
+    "url": "https://github.com/PearsonTech/keysecret-auth/issues"
+  },
+  "dependencies": {
+    "boom": "^3.1.2",
+    "hawk": "https://github.com/vbalas6/hawk.git",
+    "hoek": "^3.0.4"
+  },
+  "description": "Client and server libraries to manage Key/Secret authentication.  Effectivaly a basic wrapper around the Hawk authentication library",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
+    "gulp-derequire": "^2.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "hapi": "~10.0.0",
+    "inert": "^4.0.2",
+    "keysecret-auth": "git+ssh://git@github.com/PearsonTech/keysecret-auth.git"
+  },
+  "gitHead": "465c03371d404153c0cb01cf79b3e259c2e60863",
+  "homepage": "https://github.com/PearsonTech/keysecret-auth#readme",
+  "main": "index.js",
+  "name": "keysecret-auth",
+  "optionalDependencies": {},
+  "readme": "# readerplus-keysecret-auth\r\nA wrapper around the Hawk authentication framework.\r\n\r\n- Client library to generate Key/Secret header for authentication\r\n- Server-side Hapi authentication scheme\r\n\r\n# Browser\r\n\r\nPlease note this example does take into account the mechanism for obtaining or transmitting the set of shared credentials required.\r\nhttps://github.com/hueniverse/hawk#mac-keys-transmission\r\n\r\n\r\n    <script src=\"/dist/browser.js\"></script>\r\n\r\nThen\r\n\r\n    var credentials = {\r\n      key: \"dh37fgj492je\",\r\n      secret : \"werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn\",\r\n      algorithm: 'sha256'\r\n    }\r\n\r\n    var header = keySecret.client.header(URL, METHOD, { credentials: credentials });\r\n\r\nThen can add to your request headers\r\n\r\n        headers[\"Authorization\"] = header.field;\r\n\r\n# Server\r\n\r\n    server.register(require('keysecret-auth').scheme, function (err) {\r\n      server.auth.strategy('keySecret', 'keySecret', isKeySecret);\r\n    });\r\n\r\n\r\n# Example\r\n\r\n    node example/server.js\r\n\r\nThen open browser ``localhost:3000``\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PearsonTech/keysecret-auth.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

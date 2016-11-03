@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="mocha"></div>
+
+  <script src="https://cdn.rawgit.com/jquery/jquery/2.1.4/dist/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
+  <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+
+  <script src="/dist/browser.js"></script>
+
+  <script>
+    mocha.setup('bdd')
+  </script>
+  <script>
+    var credentials = {
+      key: "d74s3nz2873n",
+      secret: "werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn",
+      algorithm: 'sha256'
+    }
+
+    describe('Make request', function() {
+
+      var url = 'http://localhost:3000/api/test';
+      var header = keySecret.client.header(url, 'GET', {
+        credentials: credentials
+      });
+
+      it('GET request should succeed', function(done) {
+        $.ajax({
+          url: url,
+          headers: {
+            'Authorization': header.field
+          }
+        }).done(function(data) {
+          expect(data.test).to.equal('passed');
+          done()
+        });
+      });
+    });
+  </script>
+  <script>
+    mocha.checkLeaks();
+    mocha.globals(['jQuery']);
+    mocha.run();
+  </script>
+</body>
+
+</html>
